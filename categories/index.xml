@@ -6,17 +6,80 @@
     <description>Recent content in Categories on Feng Duo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Dec 2019 17:38:57 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://feng-duo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>项目开发</title>
+      <link>https://feng-duo.github.io/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://feng-duo.github.io/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>JavaSE</title>
       <link>https://feng-duo.github.io/categories/javase/</link>
-      <pubDate>Tue, 31 Dec 2019 17:38:57 +0800</pubDate>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://feng-duo.github.io/categories/javase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>网络编程</title>
+      <link>https://feng-duo.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://feng-duo.github.io/categories/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thread</title>
+      <link>https://feng-duo.github.io/categories/thread/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://feng-duo.github.io/categories/thread/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>集合框架</title>
+      <link>https://feng-duo.github.io/categories/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://feng-duo.github.io/categories/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exception</title>
+      <link>https://feng-duo.github.io/categories/exception/</link>
+      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://feng-duo.github.io/categories/exception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>https://feng-duo.github.io/categories/oop/</link>
+      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://feng-duo.github.io/categories/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IO流</title>
+      <link>https://feng-duo.github.io/categories/io%E6%B5%81/</link>
+      <pubDate>Fri, 10 Jan 2020 17:38:57 +0800</pubDate>
+      
+      <guid>https://feng-duo.github.io/categories/io%E6%B5%81/</guid>
       <description></description>
     </item>
     
