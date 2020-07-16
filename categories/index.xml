@@ -6,26 +6,17 @@
     <description>Recent content in Categories on Feng Duo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Dec 2019 12:45:35 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2019 17:38:57 +0800</lastBuildDate>
     
 	<atom:link href="https://feng-duo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>中国</title>
-      <link>https://feng-duo.github.io/categories/%E4%B8%AD%E5%9B%BD/</link>
-      <pubDate>Thu, 05 Dec 2019 12:45:35 +0800</pubDate>
+      <title>JavaSE</title>
+      <link>https://feng-duo.github.io/categories/javase/</link>
+      <pubDate>Tue, 31 Dec 2019 17:38:57 +0800</pubDate>
       
-      <guid>https://feng-duo.github.io/categories/%E4%B8%AD%E5%9B%BD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>成都</title>
-      <link>https://feng-duo.github.io/categories/%E6%88%90%E9%83%BD/</link>
-      <pubDate>Thu, 05 Dec 2019 12:45:35 +0800</pubDate>
-      
-      <guid>https://feng-duo.github.io/categories/%E6%88%90%E9%83%BD/</guid>
+      <guid>https://feng-duo.github.io/categories/javase/</guid>
       <description></description>
     </item>
     

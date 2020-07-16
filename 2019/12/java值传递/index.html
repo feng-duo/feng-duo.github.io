@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.60.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="风 铎">
+<meta name="keywords" content="tech">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java值传递">
+<meta name="twitter:title" content="Java值传递">
+<meta property="og:url" content="https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+<meta property="twitter:url" content="https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+<meta property="og:site_name" content="Feng Duo&#39;s Blog">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-12-31T17:38:57">
+  
+  
+    <meta property="article:modified_time" content="2019-12-31T17:38:57">
+  
+  
+  
+    
+      <meta property="article:section" content="JavaSE">
+    
+  
+  
+    
+      <meta property="article:tag" content="值传递">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://feng-duo.github.io/img/pic.jpg">
+  <meta property="twitter:image" content="https://feng-duo.github.io/img/pic.jpg">
+
+
+    <title>Java值传递</title>
+
+    <link rel="icon" href="https://feng-duo.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://feng-duo.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://feng-duo.github.io/">Feng Duo&#39;s Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://feng-duo.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://feng-duo.github.io/img/pic.jpg" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://feng-duo.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://feng-duo.github.io/img/pic.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">风 铎</h4>
+        
+          <h5 class="sidebar-profile-bio">我们无论何时都在烦恼着，挣扎着，向前迈进。</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://feng-duo.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://feng-duo.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://feng-duo.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://feng-duo.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://feng-duo.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/feng-duo" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Java值传递
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-12-31T17:38:57&#43;08:00">
+        
+  十二月 31, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://feng-duo.github.io/categories/javase">JavaSE</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <h2 id="java">为什么Java中只有值传递</h2>
+<p>1.理解为什么Java只有值传递之前，需要知道形式参数和实际参数的区别。</p>
+<ul>
+<li>形式参数：指用于定义方法的时候使用的参数，是用来接收调用者传递的参数的。</li>
+<li>实际参数：用于调用时传递给方法的参数。实参在传递给别的方法之前是要被预先赋值的。</li>
+</ul>
+<pre><code>    public class Test{
+        public String str;
+        public static void main(String[] args){
+            Test test=new Test();
+            test.str=&quot;测试&quot;；
+            test.println(str);//实际参数
+        }
+        public void println(String str){//形式参数
+            System.out.println(str);
+        }
+    }
+</code></pre><p>2.值传递和引用传递的区别</p>
+<ul>
+<li>值传递：指调用方法的时候把实参复制一份传递到方法中，这样在方法中对参数进行修改不会影响到实际参数。</li>
+<li>引用传递：值调用方法是把实参的地址直接传递到方法中，这在方法中对参数进行修改会影响到实际参数。</li>
+</ul>
+<p>3.了解以上知识后，理解为什么Java中只有值传递为更加容易些。</p>
+<ul>
+<li>简单来说，无论是基本数据类型还是引用数据类型都是值传递，基本数据类型传递的是本身值的copy副本，无论在方法中怎么改变都改变不了实参本身</li>
+</ul>
+<pre><code>   public static void main(String[] args) {
+       Test test = new Test();
+
+       int i = 10;
+       test.pass(i );
+       System.out.println(&quot;print in main , i is &quot; + i);
+   }
+
+   public void pass(int j) {
+   j = 20;
+   System.out.println(&quot;print in pass , j is &quot; + j);
+   }
+</code></pre><p>输出结果如下：</p>
+<pre><code>  print in pass , j is 20
+  print in main , i is 10
+</code></pre><ul>
+<li>引用数据类型是把自己的地址copy一份传到方法中，这样方法中形参也会指向这个地址，这样进行修改就会影响到实参</li>
+</ul>
+<pre><code>    public static void main(String[] args) {
+       Test test = new Test();
+
+       User song = new User();
+       song.setName(&quot;Song&quot;);
+       song.setGender(&quot;Male&quot;);
+       test.pass(song);
+       System.out.println(&quot;print in main , user is &quot; + song);
+    }
+
+    public void pass(User user) {
+       user.setName(&quot;Li&quot;);
+       System.out.println(&quot;print in pass , user is &quot; + user);
+    }
+</code></pre><p>这里没有改变形参的指向地址，输出结果如下:</p>
+<pre><code>    print in pass , user is User{name='Li', gender='Male'}
+    print in main , user is User{name='Li', gender='Male'}
+</code></pre><ul>
+<li>如果形参的指向地址发生了改变就不会影响实参。</li>
+</ul>
+<pre><code>    public static void main(String[] args) {
+       Test test = new Test();
+
+       User song = new User();
+       song.setName(&quot;Song&quot;);
+       song.setGender(&quot;Male&quot;);
+       test.pass(song);
+       System.out.println(&quot;print in main , user is &quot; + song);
+    }
+
+    public void pass(User user) {
+        user=new User();//这里改变了指向地址
+        user.setName(&quot;Li&quot;);
+        System.out.println(&quot;print in pass , user is &quot; + user);
+    }
+</code></pre><p>输出结果如下：</p>
+<pre><code>  print in pass , user is User{name='Li', gender='Male'}
+  print in main , user is User{name='Song', gender='Male'}
+</code></pre><p><strong>综上所述，Java中只有值传递，地址值也是值。</strong></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://feng-duo.github.io/tags/%E5%80%BC%E4%BC%A0%E9%80%92/">值传递</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://feng-duo.github.io/2019/12/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/" data-tooltip="Java基础知识点">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 风 铎. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://feng-duo.github.io/2019/12/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/" data-tooltip="Java基础知识点">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://feng-duo.github.io/2019/12/java%E5%80%BC%E4%BC%A0%E9%80%92/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffeng-duo.github.io%2F2019%2F12%2Fjava%25E5%2580%25BC%25E4%25BC%25A0%25E9%2580%2592%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Ffeng-duo.github.io%2F2019%2F12%2Fjava%25E5%2580%25BC%25E4%25BC%25A0%25E9%2580%2592%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Ffeng-duo.github.io%2F2019%2F12%2Fjava%25E5%2580%25BC%25E4%25BC%25A0%25E9%2580%2592%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://feng-duo.github.io/img/pic.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">风 铎</h4>
+    
+      <div id="about-card-bio">我们无论何时都在烦恼着，挣扎着，向前迈进。</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        菜鸟程序员
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        中国
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://feng-duo.github.io/img/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://feng-duo.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/feng-duo.github.io\/2019\/12\/java%E5%80%BC%E4%BC%A0%E9%80%92\/';
+          
+            this.page.identifier = '\/2019\/12\/java%E5%80%BC%E4%BC%A0%E9%80%92\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
