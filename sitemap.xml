@@ -53,6 +53,41 @@
   </url>
   
   <url>
+    <loc>https://feng-duo.github.io/categories/http/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/tags/http/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/tags/java/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/categories/java/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/categories/servlet/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/2020/04/servlet%E5%92%8Chttp%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81%E4%BB%A5%E5%8F%8Asession%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/categories/session/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://feng-duo.github.io/categories/thread/</loc>
     <lastmod>2020-04-12T00:00:00+00:00</lastmod>
   </url>
@@ -68,12 +103,12 @@
   </url>
   
   <url>
-    <loc>https://feng-duo.github.io/categories/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</loc>
+    <loc>https://feng-duo.github.io/tags/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://feng-duo.github.io/tags/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</loc>
+    <loc>https://feng-duo.github.io/categories/%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -98,12 +133,32 @@
   </url>
   
   <url>
-    <loc>https://feng-duo.github.io/tags/oop/</loc>
-    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+    <loc>https://feng-duo.github.io/categories/database/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/tags/mysql/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/categories/mysql/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/2020/02/mysql%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2020-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://feng-duo.github.io/categories/oop/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/tags/oop/</loc>
     <lastmod>2020-02-01T00:00:00+00:00</lastmod>
   </url>
   
