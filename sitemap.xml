@@ -13,12 +13,12 @@
   </url>
   
   <url>
-    <loc>https://feng-duo.github.io/categories/mysql/</loc>
+    <loc>https://feng-duo.github.io/tags/mysql/</loc>
     <lastmod>2020-11-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://feng-duo.github.io/tags/mysql/</loc>
+    <loc>https://feng-duo.github.io/categories/mysql/</loc>
     <lastmod>2020-11-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -35,31 +35,6 @@
   <url>
     <loc>https://feng-duo.github.io/tags/</loc>
     <lastmod>2020-11-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://feng-duo.github.io/tags/java/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://feng-duo.github.io/categories/java/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://feng-duo.github.io/tags/mybatis-plus/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://feng-duo.github.io/2020/08/mybatis-plus%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://feng-duo.github.io/categories/%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -99,6 +74,16 @@
   
   <url>
     <loc>https://feng-duo.github.io/categories/http/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/tags/java/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://feng-duo.github.io/categories/java/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -198,12 +183,12 @@
   </url>
   
   <url>
-    <loc>https://feng-duo.github.io/tags/io%E6%B5%81/</loc>
+    <loc>https://feng-duo.github.io/categories/io%E6%B5%81/</loc>
     <lastmod>2020-01-10T17:38:57+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://feng-duo.github.io/categories/io%E6%B5%81/</loc>
+    <loc>https://feng-duo.github.io/tags/io%E6%B5%81/</loc>
     <lastmod>2020-01-10T17:38:57+08:00</lastmod>
   </url>
   
